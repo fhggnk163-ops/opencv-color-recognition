@@ -1,21 +1,21 @@
-# OpenCV Color Recognition
+# مشروع التعرف على الألوان باستخدام OpenCV
 
-## Project Description
+## وصف المشروع
 
-This project is a real-time color recognition system using OpenCV and Python.
+يهدف هذا المشروع إلى التعرف على الألوان في الوقت الحقيقي باستخدام مكتبة OpenCV ولغة Python.
 
-The program uses the laptop camera to detect different colors and identify them in real time. It can recognize:
+يقوم البرنامج بفتح كاميرا الجهاز، ثم يكتشف الألوان التالية:
 
-- Green
-- Red
-- Blue
-- Yellow
+- 🟢 الأخضر (Green)
+- 🔴 الأحمر (Red)
+- 🔵 الأزرق (Blue)
+- 🟡 الأصفر (Yellow)
 
-When a color is detected, the program draws a rectangle around the object and displays the color name.
+عند اكتشاف أحد هذه الألوان، يقوم البرنامج برسم مستطيل حول الجسم وعرض اسم اللون على الشاشة.
 
 ---
 
-## Technologies Used
+## البرامج المستخدمة
 
 - Python 3.11
 - OpenCV
@@ -25,66 +25,90 @@ When a color is detected, the program draws a rectangle around the object and di
 
 ---
 
-## Project Requirements
+## متطلبات التشغيل
 
-- Python installed through Anaconda
-- Webcam
-- OpenCV library
-- NumPy library
+قبل تشغيل المشروع يجب تثبيت:
+
+- Python (عن طريق Anaconda)
+- OpenCV
+- NumPy
+
+ثم تثبيت المكتبات بالأمر التالي:
+
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
-## Installation
+## طريقة تشغيل المشروع
 
-### 1. Create Anaconda Environment
-
-Create a new environment:
+شغّل الملف التالي:
 
 ```bash
-conda create -n opencv_env python=3.11
-
-
-conda activate opencv_env
-
-
-
-Activate the environment:
-
-conda activate opencv_env
-2. Install Required Libraries
-
-Install OpenCV and NumPy:
-
-pip install -r requirements.txt
-Running the Project
-
-Run the program using:
-
 python color_recognition.py
+```
 
-A camera window will open and the program will start detecting colors.
+بعد تشغيل البرنامج ستفتح كاميرا الجهاز، وسيبدأ البرنامج بالتعرف على الألوان مباشرة.
 
-Press:
+للخروج من البرنامج اضغط على:
 
+```text
 Q
+```
 
-to close the program.
+---
 
-How It Works
-Capture video from the webcam.
-Convert the image from BGR color space to HSV.
-Apply color ranges to detect specific colors.
-Create a mask for each detected color.
-Find objects using contours.
-Draw a bounding box around detected objects.
-Display the detected color name.
-Project Structure
+## آلية عمل المشروع
+
+يعتمد المشروع على الخطوات التالية:
+
+1. تشغيل كاميرا الجهاز.
+2. التقاط الصورة بشكل مستمر.
+3. تحويل الصورة من نظام الألوان BGR إلى HSV.
+4. تحديد نطاق كل لون باستخدام قيم HSV.
+5. إنشاء قناع (Mask) لكل لون.
+6. البحث عن حدود الأجسام (Contours).
+7. رسم مستطيل حول الجسم المكتشف.
+8. عرض اسم اللون على الشاشة.
+
+---
+
+## هيكل المشروع
+
+```
 opencv-color-recognition
 │
 ├── color_recognition.py
 ├── requirements.txt
 ├── README.md
 └── images
-Author
+```
 
-Ahmed Fahd Khosim
+---
+
+## صور من المشروع
+
+يمكن إضافة صور لنتائج تشغيل البرنامج داخل مجلد **images** ثم عرضها هنا.
+
+مثال:
+
+```md
+![Green Detection](images/green.png)
+
+![Red Detection](images/red.png)
+```
+
+---
+
+## المطور
+
+أحمد فهد خشيم
+
+---
+
+## ملاحظات
+
+- تم تنفيذ المشروع باستخدام مكتبة OpenCV.
+- تم استخدام بيئة Anaconda لإدارة البيئة الافتراضية.
+- تم تطوير المشروع وتشغيله باستخدام Visual Studio Code.
